@@ -1,0 +1,64 @@
+/* ---
+| MISC, PREP
+--- */
+
+.htmlon { display: block; position: relative; }
+
+/* ---
+| BUTTONS
+--- */
+
+/* general */
+.htmlon .buttons a { color: #222; padding: .4em .65em; font-size: .75em; border-radius: 2px; border: solid 1px; font-family: verdana; font-weight: normal; overflow: hidden; position: relative; cursor: pointer; background: white; }
+.htmlon.html_mode .buttons a:not(.html) { cursor: default; }
+.htmlon .buttons a:not(:last-child) { margin-right: 4px; }
+.htmlon a:hover { text-decoration: none !important; }
+.htmlon:not(.html_mode) a:hover { background: #eee !important; }
+
+/* specific buttons */
+.htmlon .buttons .bold { font-weight: bold; }
+.htmlon .buttons .italic { font-style: italic; }
+.htmlon .buttons .underline { text-decoration: underline; }
+.htmlon .html::after { content: 'HTML'; }
+.htmlon.html_mode .html::after { content: 'visual'; }
+.htmlon.html_mode .buttons a:not(.html) { opacity: .35; }
+.htmlon .buttons .img input { position: absolute; opacity: 0; left: 0; width: 100%; height: 100%; top: 0; background: red; cursor: pointer; }
+
+/* ---
+| PICKERS (font, colour)
+--- */
+
+.htmlon .picker { position: absolute; width: 116px; top: 19px; height: 100px; padding: 3px; display: none; overflow-y: auto; }
+.htmlon .picker ul { list-style: none; margin: 0; padding: 0; }
+
+/* colour picker */
+.htmlon .colour.picker ul { display: none; }
+.htmlon .colour.picker li { display: inline-block; margin: 3px; cursor: pointer; width: 11px; height: 11px; border: solid 1px white; }
+.htmlon .colour.picker li:hover { transform: rotate(45deg); }
+.htmlon .colour.picker input { width: 80px; border: none; padding: 2px; margin: 3px; box-sizing: }
+.htmlon .colour.picker a { padding: 2px; background: #ddd; border: solid 1px #999; }
+.htmlon .colour.picker a:hover { background: #f2f2f2; }
+
+/* font picker */
+.htmlon .font.picker li { border: 1px solid transparent; padding: 0 2px; margin: 2px; cursor: default; font-size: 13px; color: #222; }
+.htmlon .font.picker li:hover { border-color: #ddd; background: #bbb; }
+
+/* ---
+| STAGE - iframe and HTML textarea
+--- */
+
+.htmlon iframe, .htmlon textarea { margin-top: 1rem; border: solid 1px #777; box-sizing: border-box; background: #f2f2f2; width: 800px; max-width: 100%; height: 320px; }
+.htmlon.html_mode iframe { display: none !important; }
+.htmlon textarea {
+	padding: 12px;
+	font-family: "Courier new";
+	font-size: .9em;
+	color: #d22;
+	display: none !important;
+	-moz-tab-size:4;
+	-o-tab-size:4;
+	-webkit-tab-size:4;
+	tab-size:4;
+	overflow-x: hidden;
+}
+.htmlon.html_mode textarea { display: block !important; }
